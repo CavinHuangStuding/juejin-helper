@@ -2,7 +2,7 @@ name: Auto
 
 on:
   schedule:
-    - cron: "30 1 * * *" # 北京时间上午06:30
+    - cron: "3 7 * * *" # 北京时间上午06:30
   workflow_dispatch:
 
 env:
@@ -30,6 +30,24 @@ jobs:
           cd workflows
           yarn
           yarn checkin
+  Auto:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Random Quote
+      id: quote
+      uses: jakejarvis/random-quote@v1
+      
+    - name: Update README
+      run: |
+        echo "${{ steps.quote.outputs.value }}" >> README.md
+        git config --global user.name "cavinHuang"
+        git config --global user.email "sujinw@qq.com"
+        git add .
+        git commit -m "Update README with a new quote - $(date +"%Y-%m-%d")"
+        git push
 #  SeaGold:
 #    needs: CheckIn
 #    runs-on: ubuntu-latest
