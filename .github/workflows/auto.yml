@@ -1,4 +1,4 @@
-name: Auto
+name: Auto1
 
 on:
   schedule:
@@ -35,14 +35,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-
-    - name: Random Quote
-      id: quote
-      uses: jakejarvis/random-quote@v1
       
     - name: Update README
       run: |
-        echo "${{ steps.quote.outputs.value }}" >> README.md
+        echo "$(date +"%Y-%m-%d")\n" >> README.md
         git config --global user.name "cavinHuang"
         git config --global user.email "sujinw@qq.com"
         git add .
