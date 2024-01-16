@@ -19,6 +19,7 @@ env:
   PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
   WEIXIN_WEBHOOK: ${{ secrets.WEIXIN_WEBHOOK }}
   SERVERPUSHKEY: ${{ secrets.SERVERPUSHKEY }}
+  FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
 
 jobs:
   CheckIn:
@@ -31,6 +32,7 @@ jobs:
           cd workflows
           yarn
           yarn checkin
+
 #  SeaGold:
 #    needs: CheckIn
 #    runs-on: ubuntu-latest
