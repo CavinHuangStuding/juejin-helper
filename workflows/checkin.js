@@ -2,6 +2,7 @@ import notification from "./utils/notification-kit";
 const JuejinHelper = require("juejin-helper");
 const utils = require("./utils/utils");
 const env = require("./utils/env");
+const winston = require("./utils/log");
 
 class Task {
   constructor(juejin) {
