@@ -4,6 +4,8 @@ const utils = require("./utils/utils");
 const env = require("./utils/env");
 const winston = require("./utils/log");
 
+console.log(winston)
+
 class Task {
   constructor(juejin) {
     this.juejin = juejin;
