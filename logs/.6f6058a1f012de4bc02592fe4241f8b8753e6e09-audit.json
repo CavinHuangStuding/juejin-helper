@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/home/runner/work/juejin-helper/juejin-helper/logs/.6f6058a1f012de4bc02592fe4241f8b8753e6e09-audit.json",
+    "files": [
+        {
+            "date": 1722396849039,
+            "name": "/home/runner/work/juejin-helper/juejin-helper/logs/combined.log.2024-07-31",
+            "hash": "f6628f386beba0336de09f7d79200f85452000006ed15b4c84dbcb9593a89b66"
+        }
+    ],
+    "hashType": "sha256"
+}
