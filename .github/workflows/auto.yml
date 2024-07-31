@@ -32,20 +32,13 @@ jobs:
           cd workflows
           yarn
           yarn checkin
-  Auto:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-
-    - name: Update README
-      run: |
-        git config --global user.name "cavinHuang"
-        git config --global user.email "sujinw@qq.com"
-        git add .
-        git commit -m "Update log with a new quote - $(date +"%Y-%m-%d")"
-        git push
-
+      - name: Update README
+        run: |
+          git config --global user.name "cavinHuang"
+          git config --global user.email "sujinw@qq.com"
+          git add .
+          git commit -m "Update log with a new quote - $(date +"%Y-%m-%d")"
+          git push
 #  SeaGold:
 #    needs: CheckIn
 #    runs-on: ubuntu-latest
