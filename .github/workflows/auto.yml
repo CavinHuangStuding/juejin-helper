@@ -30,8 +30,9 @@ jobs:
       - name: Run Project
         run: |
           cd workflows
+          touch yarn.log
           yarn
-          yarn checkin
+          yarn checkin >> yarn.log 2>&1
 
 #  SeaGold:
 #    needs: CheckIn
