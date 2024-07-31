@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/cavinhuang/workspace/projects/juejin-helper/logs/.87080da54bf10c589174a208e1e129d2bd5fb494-audit.json",
+    "files": [
+        {
+            "date": 1722396777997,
+            "name": "/Users/cavinhuang/workspace/projects/juejin-helper/logs/combined.log.2024-07-31",
+            "hash": "c9a6c8aab133ff5e4b54e768dba660eb21bfe1bd1fca03b632699b6161c84521"
+        }
+    ],
+    "hashType": "sha256"
+}
