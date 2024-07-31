@@ -156,6 +156,7 @@ class SdkTask extends Task {
   calledTrackOnloadEvent = false;
 
   async run() {
+    winston.info("------事件埋点追踪-------");
     console.log("------事件埋点追踪-------");
 
     const sdk = this.juejin.sdk();
@@ -167,6 +168,7 @@ class SdkTask extends Task {
       this.calledSdkSetting = false;
     }
     console.log(`SDK状态: ${this.calledSdkSetting ? "加载成功" : "加载失败"}`);
+    winston.info(`SDK状态: ${this.calledSdkSetting ? "加载成功" : "加载失败"}`);
 
     try {
       const result = await sdk.mockTrackGrowthEvent();
@@ -179,6 +181,7 @@ class SdkTask extends Task {
       this.calledTrackGrowthEvent = false;
     }
     console.log(`成长API事件埋点: ${this.calledTrackGrowthEvent ? "调用成功" : "调用失败"}`);
+    winston.info(`成长API事件埋点: ${this.calledTrackGrowthEvent ? "调用成功" : "调用失败"}`);
 
     try {
       const result = await sdk.mockTrackOnloadEvent();
@@ -191,8 +194,10 @@ class SdkTask extends Task {
       this.calledTrackOnloadEvent = false;
     }
     console.log(`OnLoad事件埋点: ${this.calledTrackOnloadEvent ? "调用成功" : "调用失败"}`);
+    winston.info(`OnLoad事件埋点: ${this.calledTrackOnloadEvent ? "调用成功" : "调用失败"}`);
 
     console.log("-------------------------");
+    winston.info("-------------------------");
   }
 }
 
@@ -201,28 +206,35 @@ class MockVisitTask extends Task {
 
   async run() {
     console.log("--------模拟访问---------");
+    winston.info("--------模拟访问---------");
     try {
       const browser = this.juejin.browser();
       await browser.open();
       try {
         await browser.visitPage("/");
         console.log("掘金首页：页面访问成功");
+        winston.info("掘金首页：页面访问成功");
       } catch (e) {
         console.log("掘金首页：页面访问失败");
+        winston.info("掘金首页：页面访问失败");
       }
       await utils.wait(utils.randomRangeNumber(2000, 5000));
       try {
         await browser.visitPage("/user/center/signin");
         console.log("掘金每日签到：页面访问成功");
+        winston.info("掘金每日签到：页面访问成功");
       } catch (e) {
         console.log("掘金每日签到：页面访问失败");
+        winston.info("掘金每日签到：页面访问失败");
       }
       await utils.wait(utils.randomRangeNumber(2000, 5000));
       await browser.close();
     } catch {
       console.log("浏览器API异常");
+      winston.info("浏览器API异常");
     }
     console.log("-------------------------");
+    winston.info("-------------------------");
   }
 }
 
@@ -255,16 +267,20 @@ class CheckIn {
     await this.mockVisitTask.run();
     await this.sdkTask.run();
     console.log(`运行 ${this.growthTask.taskName}`);
+    winston.info(`运行 ${this.growthTask.taskName}`);
     await this.growthTask.run();
     console.log(`运行 ${this.dipLuckyTask.taskName}`);
+    winston.info(`运行 ${this.dipLuckyTask.taskName}`);
     await this.dipLuckyTask.run();
     console.log(`运行 ${this.lotteriesTask.taskName}`);
+    winston.info(`运行 ${this.lotteriesTask.taskName}`);
     await this.lotteriesTask.run(this.growthTask, this.dipLuckyTask);
     console.log(`运行 ${this.bugfixTask.taskName}`);
+    winston.info(`运行 ${this.bugfixTask.taskName}`);
     await this.bugfixTask.run();
     await juejin.logout();
     console.log("-------------------------");
-
+    winston.info("-------------------------");
     return this.growthTask.todayStatus;
   }
 
@@ -327,6 +343,7 @@ async function run(args) {
 
     const content = checkin.toString();
     console.log(content); // 打印结果
+    winston.info(content); // 记录日志
 
     messageList.push(content);
   }
