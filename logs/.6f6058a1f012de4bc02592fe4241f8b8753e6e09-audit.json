@@ -69,6 +69,11 @@
             "date": 1745206029962,
             "name": "/home/runner/work/juejin-helper/juejin-helper/logs/combined.log.2025-04-21",
             "hash": "9962db80ff412723292407c882879e5f2d8c12a731643c38fd03509314301d29"
+        },
+        {
+            "date": 1745292163449,
+            "name": "/home/runner/work/juejin-helper/juejin-helper/logs/combined.log.2025-04-22",
+            "hash": "0b9dc3c500d076fa0ff2fbcd31c6f8535dcdd73637c02940eabe9e06f69f26fb"
         }
     ],
     "hashType": "sha256"
