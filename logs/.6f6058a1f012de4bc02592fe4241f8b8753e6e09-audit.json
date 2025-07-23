@@ -6,11 +6,6 @@
     "auditLog": "/home/runner/work/juejin-helper/juejin-helper/logs/.6f6058a1f012de4bc02592fe4241f8b8753e6e09-audit.json",
     "files": [
         {
-            "date": 1752032341565,
-            "name": "/home/runner/work/juejin-helper/juejin-helper/logs/combined.log.2025-07-09",
-            "hash": "74ec1c234e5aeafc0729f1c3ea77e80a76c13eda2cf9a3568e59afe08cb7cd1c"
-        },
-        {
             "date": 1752118711622,
             "name": "/home/runner/work/juejin-helper/juejin-helper/logs/combined.log.2025-07-10",
             "hash": "caac223a19bfe2e788d48a0cf212b20c3f2c93c32eed9b6435cf0925a802ba94"
@@ -74,6 +69,11 @@
             "date": 1753155979626,
             "name": "/home/runner/work/juejin-helper/juejin-helper/logs/combined.log.2025-07-22",
             "hash": "d949570dae91f2964eda63d8f234abffab8084c37239e8ec04f5eddc8cf90a9e"
+        },
+        {
+            "date": 1753242469601,
+            "name": "/home/runner/work/juejin-helper/juejin-helper/logs/combined.log.2025-07-23",
+            "hash": "b0834929d8c3389deddeb580db673bcbee5d74e3830e5c3d94282b65f06842a4"
         }
     ],
     "hashType": "sha256"
